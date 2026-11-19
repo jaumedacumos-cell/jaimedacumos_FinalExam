@@ -1,0 +1,53 @@
+/* Thread & Lane - visual identity: indigo denim, stitch-yellow accent, cool paper background */
+:root {
+  --ink: #14202E;
+  --indigo: #1F3A5F;
+  --thread: #F2B705;
+  --thread-dark: #D9A300;
+  --paper: #F3F5F8;
+  --tile: #E4E9F0;
+  --muted: #4A5668;
+}
+body { font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; }
+h1, h2, h3, .navbar-brand { font-weight: 800; letter-spacing: -0.01em; }
+a { color: var(--indigo); }
+
+/* Keyboard focus: blue on light areas, yellow on dark areas */
+:focus-visible { outline: 3px solid #0B5FFF; outline-offset: 2px; }
+.navbar :focus-visible, .hero :focus-visible, footer :focus-visible { outline-color: var(--thread); }
+.skip-link { position: absolute; left: -999px; top: 0; background: var(--thread); color: var(--ink); padding: .5rem 1rem; z-index: 2000; }
+.skip-link:focus { left: 0; }
+
+.bg-ink { background: var(--ink); }
+.btn-thread { background: var(--thread); border-color: var(--thread); color: var(--ink); font-weight: 700; }
+.btn-thread:hover, .btn-thread:focus { background: var(--thread-dark); border-color: var(--thread-dark); color: var(--ink); }
+
+/* Hero: the stitched box is the one memorable element */
+.hero { background: var(--indigo); color: #fff; padding: 4rem 0; }
+.hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); line-height: 1.05; max-width: 14ch; }
+.hero p { max-width: 42ch; color: #E3E9F2; }
+.stitch { border: 2px dashed var(--thread); border-radius: .75rem; padding: 1rem; }
+.stitch .art-tile { padding: 14%; }
+
+/* Product tiles */
+.art-tile { position: relative; background: var(--tile); aspect-ratio: 1 / 1; display: grid; place-items: center; padding: 12%; }
+.art { width: 100%; height: 100%; }
+.product { border: 1px solid #D5DCE6; border-radius: .75rem; overflow: hidden; }
+.product .art-tile { border-radius: 0; }
+.price { font-weight: 800; }
+.wish-btn { position: absolute; top: .5rem; right: .5rem; width: 2.5rem; height: 2.5rem; border-radius: 50%; background: #fff; font-size: 1.2rem; line-height: 1; padding: 0; }
+.wish-btn[aria-pressed="true"] { color: #C62828; }
+.cat-tile { display: block; text-decoration: none; color: var(--ink); background: #fff; border: 1px solid #D5DCE6; border-radius: .75rem; padding: .75rem; text-align: center; }
+.cat-tile .art-tile { border-radius: .5rem; margin-bottom: .6rem; }
+.cat-tile:hover { border-color: var(--indigo); }
+.thumb { width: 72px; height: 72px; flex: none; background: var(--tile); border-radius: .5rem; padding: 8px; }
+
+/* Layout helpers */
+.page-head { background: var(--indigo); color: #fff; padding: 2rem 0; }
+.filters { background: #fff; border: 1px solid #D5DCE6; border-radius: .75rem; padding: 1rem; }
+.summary { background: #fff; border: 1px solid #D5DCE6; border-radius: .75rem; padding: 1rem; }
+footer { background: var(--ink); color: #D5DCE6; padding: 1.5rem 0; margin-top: 3rem; }
+.invalid-feedback { font-size: .9rem; }
+
+@media (min-width: 992px) { .sticky-side { position: sticky; top: 5rem; } }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
